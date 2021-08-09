@@ -1,5 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import Movie from '../views/Movie.vue'
+import Tv from '../views/Tv.vue'
+import TvRecommend from '../views/RecommendTv.vue'
+import MovieRecommend from '../views/RecommendMovies.vue'
+import Search from '../views/Search.vue'
+import Movies from '../views/Movies.vue'
+import Tvs from '../views/Tvs.vue'
 
 const routes = [
   {
@@ -8,12 +15,44 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path:'/movie/:id',
+    name:'Movie',
+    component:Movie,
+    props:true
+  },
+  {
+    path:'/tv/:id',
+    name:'Tv',
+    component:Tv,
+    props:true
+  },
+  {
+    path:'/tv/recommend/:id',
+    name:'TvRecommend',
+    component:TvRecommend,
+    props:true
+  },
+  {
+    path:'/movie/recommend/:id',
+    name:'MovieRecommend',
+    component:MovieRecommend,
+    props:true
+  },
+  {
+    path:'/search/:search',
+    name:'Search',
+    component:Search,
+    props:true
+  },
+  {
+    path:'/movie',
+    name:'Movies',
+    component:Movies
+  },
+  {
+    path:'/tv',
+    name:'Tvs',
+    component:Tvs
   }
 ]
 
